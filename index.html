@@ -900,9 +900,9 @@
 
       !(function () {
         var today = moment();
-        console.log(today);
         var todolist = document.getElementById("todolist");
         for (i = 0; i < data.length; ++i) {
+        if(data[i].icon){
           if (moment(data[i].eventTime) > today) {
             var todoItem = document.createElement("div");
             todoItem.className = "todoItem";
@@ -921,6 +921,7 @@
               data[i].readings +
               " )</div></div></div></a>";
             todolist.appendChild(todoItem);
+          }
           }
         }
       })();
