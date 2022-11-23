@@ -76,6 +76,11 @@
         opacity: 0.8;
         float: right;
       }
+      
+      .floatRight{
+        float: right;
+        
+      }
 
       .header h1 {
         margin: 0;
@@ -913,13 +918,14 @@
               data[i].icon +
               '</i></div><div class="rightCol"><div class="todoName"><span class="bold">' +
               data[i].eventName +
-              "</span><span> | " +
-              moment(data[i].eventTime).format("DD MMM, YYYY") +
+              "</span><span class='floatRight italic'>" +
+              data[i].readings
+               +
               '</span></div><div class="todoName"><span class>' +
               data[i].eventDetails +
-              '</span><span class="italic"> ( ' +
-              data[i].readings +
-              " )</div></div></div></a>";
+              '</span><span class="floatRight">' +
+              moment(data[i].eventTime).format("DD MMM, YYYY")
+              "</span></div></div></a>";
             todolist.appendChild(todoItem);
           }
           }
